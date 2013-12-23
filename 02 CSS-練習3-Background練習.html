@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Background 練習</title>
+	<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.6.0/build/reset-fonts-grids/reset-fonts-grids.css">
+	<style>
+	a
+	{
+		color:white;
+		text-decoration: none;
+		/*font-size: 16px;*/
+	}
+
+	a:hover
+	{
+		color:red;
+		font-weight: bold;
+		/*font-size: 16px;*/
+		text-decoration: underline;
+	}
+
+	.items
+	{
+	zoom:1;
+	}
+
+	.items:after
+	{
+		clear:both;
+		content:'';
+		/*display:block;*/
+		display:inline-block;
+	}
+	
+	#nav
+	{
+       background:#2647A0 url(http://josephj.com/training/ncu/bg_nav.png) left top repeat-x;
+       border:solid 1px #ccc;
+       margin:10px;
+       height: 40px;
+	}
+	#nav .title ul li
+	{
+		float: left;
+		border-right: solid 1px #ccc;
+	}
+	#nav .title ul li a
+	{
+		display:block;
+		/*display: inline-block;*/
+		padding: 10px;
+	}
+
+	</style>
+
+</head>
+<body>
+<div id="doc2" class="t5">
+	<div id="hd">
+	<!--選單模組-->
+		 <div id="nav">
+			<div class="title"> 
+				<ul class="items">
+					<li><a href="#">選單1</a></li>
+					<li><a href="#">選單2</a></li>
+					<li><a href="#">選單3</a></li>
+					<li><a href="#">選單4</a></li>
+				</ul>
+
+			</div>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

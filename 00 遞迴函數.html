@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JavaScript 遞迴函數</title>
+	<script type="text/javascript">
+		var a=0;
+		var myfac=function(n)
+		{
+			
+			if(typeof(n)=="number")
+			{
+				if(n==1)
+					{ return 1;}
+				else
+					{
+						return n*myfac(n-1);}
+					}
+			else{
+				alert('參數型態不正確!');
+			}
+
+		}
+
+		alert("the final number is : "+ myfac(10));
+		document.writeln("the final number is : "+ myfac(10));
+		document.setElementById("show")
+
+	</script>
+</head>
+<body>
+	<input id="show" type="button" onclick="myfac(100)" value="test"/>
+
+	
+	
+</body>
+</html>

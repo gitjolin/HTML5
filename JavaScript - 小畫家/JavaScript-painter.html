@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JavaScript練習 - 小畫家</title>
+	<link rel="stylesheet" href="css\painter.css" >
+</head>
+<body>
+<div id="header" >
+	<h1>Jo的小練習  - 簡易小畫家</h1>
+</div>
+	<div id="toolsPanel">
+		<div id="colorPanel" class="drawTools" >
+			<div class="showColorBlock" id="showColor">	</div>
+			<div id="selectColorBlock"></div>
+		</div>
+
+		<div id="selectPenPanel" class="drawTools">	</div>
+	<div id='drawstyle' class="drawTools">
+		<div id='drawStyle1'>style1-隨便畫</div>
+		<div id='drawStyle2'>style2-方形填滿</div>
+		<div id='drawStyle3'>style3-方形不填滿</div>
+	</div>
+
+		<div id='note' class="drawTools">
+			<button id="ClearPanel">Clean</button> 
+			<div id="mousePosition">X: 0,Y: 0</div>
+		</div>
+	</div>
+
+
+	<div id="drawPanel">
+		<canvas id="drawArea" width=800 height=400px >
+			<p>很抱歉，您所使用的瀏覽器不支援本功能!</p>
+		</canvas>
+	</div>
+	
+	<script>
+	
+	var cvs=document.getElementById('drawArea');
+	var ctx=cvs.getContext('2d');
+
+	window.onload=CreateColor();
+
+    //顯示顏色的區塊
+	function CreateColor()
+	{
+		var selectColor=document.getElementById('selectColorBlock');
+		var colorArray=['#0080FF','#FF0000','#FFFF00','#008040','#FF0000','#0000FF','#804000','#808080','#800080','#8080C0'];
+
+		for (var x in colorArray)
+		{
+			var colorbox=document.createElement('div');
+			colorbox.class='colorBlock';
+			colorbox.className='colorBlock';
+			colorbox.id='colorbox'+x;
+			colorbox.style.backgroundColor=colorArray[x] ;
+			selectColor.appendChild(colorbox);
+		}
+	}
+
+// 顯示選擇的顏色
+      var selectedcolor;
+	  var colors = document.querySelectorAll('div.colorBlock');
+        for (var key = 0 ; key < colors.length; key++) {
+            colors[key].addEventListener('click', function () {
+                selectedcolor = this.style.backgroundColor; //選擇的畫筆顏色
+
+                var show=document.getElementById('showColor');
+
+                ctx.strokeStyle=selectedcolor ;
+                show.style.backgroundColor= selectedcolor;
+            }, false);
+
+        }
+
+//顯示選擇畫筆粗細
+	 var penPanel=document.getElementById('selectPenPanel');
+	 var penSizeArray=['4','7','10','15'];
+
+	 for (var y in penSizeArray)
+	 {
+	 	var penbox=document.createElement('div');
+		 	penbox.className='penbox';
+		 	penbox.id='penbox'+y;
+		 	penPanel.appendChild(penbox);
+
+		 	var addPenbox=document.getElementById('penbox'+y);
+		 	
+		 	var penSize=document.createElement('div');
+		 	penSize.className='penblock';
+		 	// penbox.style.borderStyle='solid';
+		 	penSize.style.width=penSizeArray[y]+'px';
+		 	penSize.style.height=penSizeArray[y]+'px';
+
+		 	penSize.id='pen'+y;
+		   addPenbox.appendChild(penSize);
+	 }
+
+//選擇的畫筆Size
+var selectedPen=document.querySelectorAll('div.penblock');
+// var selectedPenSize1 ;
+var selectedPenSize=2;
+
+ for (var penKey = 0 ; penKey < selectedPen.length; penKey++) 
+ 		{
+            selectedPen[penKey].addEventListener('click', function () {
+               var selectedPenSize = this.style.width; 
+               ctx.lineWidth=parseInt(selectedPenSize);
+            }, false);
+		}
+
+
+	//根據USER的選擇畫圖
+	
+	var listentag=false;
+
+	
+	//隨意畫圖
+document.getElementById('drawStyle1').addEventListener('click',function(){
+
+	console.log("我選了隨便畫!");
+
+	cvs.addEventListener('mousedown',function(event){
+			 ctx.beginPath();
+			listentag=true;
+
+
+			var currentOffset=cvs.getBoundingClientRect();
+
+			var x=event.clientX-currentOffset.left;
+			var y=event.clientY-currentOffset.top;
+			
+			ctx.moveTo(x,y);
+			showMouseInfo(x,y);
+
+
+			
+		},false);
+
+
+	cvs.addEventListener('mousemove',function(event){
+			if(listentag)
+			{
+				var currentOffset=cvs.getBoundingClientRect();
+           		var x=event.clientX-currentOffset.left;
+				var y=event.clientY-currentOffset.top;
+
+				ctx.lineTo(x,y);
+				ctx.stroke();
+				showMouseInfo(x,y);
+
+				// console.log(x+","+y);
+			}
+	},false);
+
+	cvs.addEventListener('mouseup',function(event){
+		listentag=false;
+				var currentOffset=cvs.getBoundingClientRect();
+           		var x=event.clientX-currentOffset.left;
+				var y=event.clientY-currentOffset.top;
+
+		ctx.moveTo(x,y);
+		showMouseInfo(x,y);
+
+
+	},false);
+},false);
+	
+
+//畫圓形
+document.getElementById('drawStyle2').addEventListener('click',function(){
+console.log("我選了畫方形(填滿)!");
+alert(selectedcolor);
+var listentag=false;
+
+     var x_start;
+     var y_start;
+     var x_end;
+     var y_end;
+	 var x_progress;
+     var y_progress;
+
+	cvs.addEventListener('mousedown',function(event){
+			 ctx.beginPath();
+			listentag=true;
+
+			var currentOffset=cvs.getBoundingClientRect();
+
+			 x_start=event.clientX-currentOffset.left;
+			 y_start=event.clientY-currentOffset.top;
+			
+			// ctx.moveTo(x,y);
+			showMouseInfo(x_start,y_start);
+		},false);
+
+	cvs.addEventListener('mousemove',function(event){
+		if(listentag)
+			{
+				var currentOffset=cvs.getBoundingClientRect();
+           		x_progress=event.clientX-currentOffset.left;
+				y_progress=event.clientY-currentOffset.top;
+				ctx.fillStyle=selectedcolor;
+	   			ctx.fillRect (x_start, y_start, x_progress-x_start, y_progress-y_start);   
+			}
+		showMouseInfo(x_progress,y_progress);
+	},false);
+
+	cvs.addEventListener('mouseup',function(event){
+		listentag=false;
+				var currentOffset=cvs.getBoundingClientRect();
+           		x_end=event.clientX-currentOffset.left;
+				y_end=event.clientY-currentOffset.top;
+	   ctx.fillStyle=selectedcolor;
+	   ctx.fillRect (x_start, y_start, x_end-x_start, y_end-y_start);   
+				
+		// ctx.art()
+		showMouseInfo(x_end,y_end);
+	},false);
+},false);
+
+document.getElementById('drawStyle3').addEventListener('click',function(){
+console.log("我選了畫圓形(框框)!");
+var listentag=false;
+
+     var x_start;
+     var y_start;
+     var x_end;
+     var y_end;
+	 var x_progress;
+     var y_progress;
+
+	cvs.addEventListener('mousedown',function(event){
+			 ctx.beginPath();
+			listentag=true;
+
+			var currentOffset=cvs.getBoundingClientRect();
+
+			 x_start=event.clientX-currentOffset.left;
+			 y_start=event.clientY-currentOffset.top;
+			
+			
+			showMouseInfo(x_start,y_start);
+		},false);
+
+	cvs.addEventListener('mousemove',function(event){
+		if(listentag)
+			{
+				var currentOffset=cvs.getBoundingClientRect();
+           		x_progress=event.clientX-currentOffset.left;
+				y_progress=event.clientY-currentOffset.top;
+				// ctx.stroke();
+	   			// context.strokeRect(x, y, w, h)
+                
+                // context.strokeRect(150,100, 50, 50);
+	   			ctx.strokeRect (x_start, y_start, x_progress-x_start, y_progress-y_start);   
+			}
+		showMouseInfo(x_progress,y_progress);
+	},false);
+
+	cvs.addEventListener('mouseup',function(event){
+		listentag=false;
+				var currentOffset=cvs.getBoundingClientRect();
+           		x_end=event.clientX-currentOffset.left;
+				y_end=event.clientY-currentOffset.top;
+	   
+	    ctx.strokeRect (x_start, y_start, x_end-x_start, y_end-y_start);   
+				// ctx.stroke();
+
+		// ctx.art()
+		showMouseInfo(x_end,y_end);
+	},false);
+},false);
+
+
+// 擷取滑鼠位置資訊
+	function showMouseInfo(mouseX,mouseY) 
+	{
+		var showMouse=document.getElementById('mousePosition');
+		var mouseMsg="X\t" +mouseX+"\t,Y:\t"+mouseY;
+		showMouse.innerHTML=mouseMsg;
+	}
+
+	// 觸發清空畫布事件
+
+	document.getElementById('ClearPanel').addEventListener('click',function (){
+		var cvs=document.getElementById('drawArea');
+		var ctx=cvs.getContext('2d');
+ 		 ctx.clearRect(0, 0, cvs.width, cvs.height);
+
+	},false);
+
+	</script>
+</body>
+</html>

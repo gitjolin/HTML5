@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JavaScript - 物件</title>
+	<script >
+	//基本函式設定
+		var Object1={x:10,y:100};
+
+		document.write("object1 x=" + Object1.x +"<br />");
+		document.write("object1 y=" + Object1.y +"<p>");
+
+		var book=
+		{
+			"name": "HTML Study Book",
+			"author":"SomeBody",
+			"price":500
+		}
+		document.write("book name =" + book.name +"<br />");
+		document.write("book aurthor=" + book.author +"<br />");
+		document.write("book price="+book.price +"<p>");
+
+		//函式物件的封裝
+
+		function w(message){
+			document.write("function String:"+ message);
+		};
+
+		var obj={
+			msg:function() 
+				{document.write('Hello this is msg function <br />')},
+			hello:function(message)
+				{document.write(message)},
+			welcome:w,
+		};//end of obj
+
+		obj.msg();
+		obj.hello("哈囉! <br />");
+		obj.welcome("歡迎光臨!<p>");
+
+		//JavaScript的物件導向
+        document.write("======  物件導向 Sample =======<br />");
+		var op1={'SayHello' : 'Hello JavaScript'};
+		function o1(){}; //宣告空物件
+		o1.prototype=op1; //讓O1有OP1的功能
+
+		function hello()
+		{
+			var h1=new o1();
+			document.write(h1.SayHello + "<p>");
+		}
+		hello();
+
+
+	</script>
+		
+</head>
+<body>
+	
+</body>
+</html>

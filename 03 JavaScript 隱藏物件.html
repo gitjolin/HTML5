@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JavaScript 隱藏物件</title>
+	<script>
+	function showNode(){
+		var strNode=document.getElementById('div_art');
+		var nodeDisplay=strNode.style.display;
+		// var strMode=document.getElementById('abc');
+		 console.log(strNode);
+		 if(nodeDisplay == 'block')
+		 {
+			strNode.style.display='none';
+		 }else{
+		 	strNode.style.display='block';	
+		 }
+		 
+		// document.getElementById('s').style.display
+		}
+	</script>
+	
+	<style type="text/css" media="screen">
+		 h1
+		 {
+		 	font-weight: bolder;
+			font-style: Georgia;
+			color:blue;
+		 }
+		 p
+		 {
+		 	font-size: 14px;
+		 	font-weight: bolder;
+		 	font-style: 標楷體;
+		 }
+		 header:hover
+			{
+				cursor: pointer;
+				color: red;
+			}
+		 #div_art
+		 {
+		 	display: none;	
+		 }
+		
+		#myblock
+		{
+			width:450px;
+			height: 450px;
+		}
+		footer
+		{
+			font-size:8px;
+			font-weight: bolder;
+			background-color: yellowgreen;
+			text-align: right;
+
+		}
+	</style>
+
+
+
+</head>
+
+<body>
+	
+	<div id="myblock">
+		<header id="div_title" onclick="showNode()">
+			<h1>
+				我的奶茶不加鹽
+			</h1>
+		</header>
+		<article id="div_art">
+			<p>
+			早上去早餐店吃早餐時，有個爺爺牽了一個小女孩走進店<br />裡，紅色的衣服留著短短的頭髮，一路蹦蹦跳跳地走<br />進店裡；
+			<p>
+			 <em>小女孩用稚嫩的聲音說:『我要一個奶茶』<br />
+			 <em>我心裡os:『小朋友奶茶不是一個，是一杯好嗎...』<br />
+			 <em>就在我OS還沒結束，接著就聽到這樣一句<br />
+			 <em>小女孩:『我的奶茶不可以加鹽巴喔!』<br />
+
+			<p>當場我忍不住的笑了出來，看來媒體的魅力還真不小啊!
+		</article>
+		<footer>
+			<em>copyright@2013 JoLin
+		</footer>
+	</div>
+</body>
+</html>

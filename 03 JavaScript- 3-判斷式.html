@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JavaScript - 判斷式練習1</title>
+	<script>	
+	var a=500;
+	var b=650;
+	if(a>b)
+	{
+
+		console.log("a> b ");
+	}else
+	{
+		console.log("a<b");
+	}
+//switch 練習
+    var now = new Date();
+	var month = new Date().getMonth();
+	var msg='';
+	switch(month){
+		case 0:
+			msg='一月';
+			break;
+		case 1:
+			msg='二月';
+			break;
+		case 2:
+			msg='三月';
+			break;
+		case 3:
+			msg='四月';
+			break;
+		case 4:
+			msg='五月';
+			break;	
+		case 5:
+			msg='六月';
+			break;
+		case 6:
+			msg='七月';
+			break;
+		case 7:
+			msg='八月';
+			break;
+		case 8:
+			msg='九月';
+			break;
+		case 9:
+			msg='十月';
+			break;
+		case 10:
+			msg='十一月';
+			break;	
+
+		case 11:
+			msg='十二月';
+			break;
+}
+  document.write("===== switch case 練習 ===== <br>");
+  document.write("今天是 : "+msg+'/'+now.getDate()+'/'+now.getDay()+"<p>");
+console.log("今天是 : "+msg+'/'+now.getDate()+'/'+now.getDay());
+
+//if...else練習
+	var strtime="";
+	if(now.getHours()>12 && now.getHours() <18)
+	{
+	strtime="下午 -";
+	}else if(now.getHours()>=18)
+	{
+		strtime="晚上 - ";
+	}
+	else
+	{
+		strtime="早上 - "
+	}
+	console.log("現在時間是: " +strtime+now.getHours()+":"+now.getMinutes()+":"+now.getSeconds());
+    
+    document.write("===== if...else 練習 =====<br>");
+	document.write("現在時間是: " +strtime+now.getHours()+":"+now.getMinutes()+":"+now.getSeconds()+"<P>")
+	//Do While練習
+	 document.write("===== do...While 練習 =====<br>");
+	 var sum=0,x=0;  //sum:總數和   x=變數;
+	 var dnumber=0;  //雙數和
+	 var snumber=0;  //單數和
+	 do 
+	 {
+		sum +=x;
+		if(x%2 == 0)
+		{
+			dnumber += x; //求雙數和
+		}else
+		{
+			snumber += x;
+		}
+		x++;
+	 }while (x<=1000)
+     document.write("1累加到1000的單數和結果是 : "+ snumber +"<br>");
+     document.write("1累加到1000的雙數和結果是 : "+ dnumber +"<br>");
+	 document.write("1累加到1000的結果是 : "+ sum +"<P>");
+	//for 迴圈練習
+	document.write("===== For 迴圈的練習 =====<br>");
+	var sum=0;
+	for(var i=1 ; i<=10 ;i++)
+		{sum +=i;}
+	document.write("1...10的總和是: "+ sum +"<br>");
+	</script>
+</head>
+<body>
+	
+	<div id="Show Time">
+
+	</div>
+</body>
+</html>

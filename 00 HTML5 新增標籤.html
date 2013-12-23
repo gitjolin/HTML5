@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>HTML 新增標籤</title>
+	<link rel="stylesheet" href="css/MyDocStyle_1.css">
+	<!--output 元素的計算-->
+	<script> 
+		function calc() {
+            x = document.getElementById('x').value;
+            y = document.getElementById('y').value;
+            document.getElementById('result').value = parseInt(x) + parseInt(y);
+        }
+
+		function showdetail(varid){
+			var showcontent=document.getElementById(varid);
+			// alert(showcontent.style.visibility);
+			showcontent.style.display==block;
+			// if(showcontent.style.visibility==hidden)
+			// {
+			// 	showcontent.style.visibility="visibility";
+			// }else{
+			// 	showcontent.style.visibility="hidden";
+			// }
+
+		}
+
+
+// <span onclick="document.getElementById('s').style.display=='none'?document.getElementById('s').style.display='block':document.getElementById('s').style.display='none';" style=" cursor:pointer; font-size:36pt; font-weight:600;color:#2672EC;padding-top:24px;" >︾</span></div>
+
+	
+		// function clickalt(strid)
+		// {
+		// 	var  strname=document.getElementById(strid);
+		// 	var  show=document.getElementsByTagName("article");
+		// 	var nodepare=strname.parentNode.nodeName;
+		// 	var nodenow=strname.nodeName;
+		// 	// var nodebrother=strname.nextSibling.nodeName;
+		// 	var nodebrother=strname.nextSibling;
+		// 	alert(strname.innerHTML + "<br>" + show.length+"<p> 目前節點:"+nodenow+";<br>父節點:"+nodepare+";<br>兄弟節點:"+ nodebrother);
+		// }
+
+		// function nodeinfo(strid)
+		// {
+		// 	var objURL=document.getElementById(strid);
+		// 	var objChilds=objURL.childNodes;
+		// 	// var objCHName=objURL.children;
+		// 	// var objChildname=objURL.children;
+
+		// 	var strTag="";
+		// 	var strTag2="";
+
+		// 	for (var i=0;i<objChilds.length;i++)
+		// 	{
+		// 		objEle=objChilds.item(i);
+		// 		strTag +=objEle.nodeName+"\n";
+				
+		// 		 // objEle2=objCHName[i];
+		// 		 // strTag2 += objEle2 +"\n";
+		// 	}
+
+		// 	alert(strTag + "<p>" +strTag2);
+
+		// }
+
+	</script>
+
+</head>
+<body>
+
+
+
+<div id="tag_mark" onclick="showdetail(mark_detail)">
+	<!-- <header  onclick="showDetail(mark_detail)">  -->
+	<!-- <header  id="mark_detail" onclick="clickalt(id)"> -->
+	<header  id="mark_header" >
+		<h1> Tag:mark </h1>
+	</header>
+	<article id="mark_detail" visibility="hidden">
+		這是一段示範文字  <mark>Mark area</mark> 
+	</article>
+</div>
+
+<div id="tag_ruby">
+	<header><h1>Tag:ruby</h1></header>	
+	<ruby>
+	<ruby>
+		測<rt>ㄘㄜ\</rt>試<rt>ㄕ\</rt>文<rt>ㄨㄣ/</rt>
+	</ruby>
+		<rt>this is test items...</rt>
+	</ruby>
+
+</div>
+
+<div id="tag_summary">
+<header><h1>Tag:Summary</h1></header>
+	
+	<details>
+		<summary>This is Group1</summary>
+			<ol >
+				<li>Test Item 1</li>
+				<li>Test Item 2</li>
+				<li>Test Item 3</li>
+				<li>Test Item 4</li>
+				<li>Test Item 5</li>
+			</ol>
+	</details>
+
+<details>
+	<summary>This is Group2</summary>
+	<ul>	
+		<li>Group 2-1</li>
+		<li>Gropu 2-2</li>
+		<li>Group 2-3</li>
+	</ul>
+	
+</details>
+</div>
+<div>
+	<header><h1> Tag:Output </h1></header>
+
+	<input type="text" id="x" value="0"> + 
+	<input type="text" id="y" value="0"> 
+	<button onclick="calc()">=</button>
+	<output id="result"></output>
+
+</div>
+
+<div id="tag_wbr">
+	<header><h1> Tag:wbr </h1></header>
+	<article>
+		<em>wbr tag:When a word is too long, or you are afraid that the browser will break your lines at the wrong place, you can use the &lt; wbr &gt; element to add word break opportunities.</em><p>
+	</article>
+	example:<br>
+	<div id="tag_wbr_content">
+	No wbr:1234567890,abcdefghijklmnopqrstuvwxyz,ABCDEFGHIJKLMANOPQRSTUVWXYZ
+	<p>
+	with wbr:No wbr:1234567890,<wbr>abcdefghijklmnopqrstuvwxyz<wbr>, ABCDEFGHIJKLMANOPQRSTUVWXYZ
+
+</div>
+
+	
+</body>
+</html>

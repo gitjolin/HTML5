@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JavaScript - 資料型別轉換</title>
+	<script>
+	var str="<h1>parseInt() 函數</h1><br />";
+	var a = "a(\"10\"): "+ parseInt("10") + "<br>";
+	var b ="b(\"10.00\"): "+ parseInt("10.00") + "<br>";
+	var c ="c(\"10.33\"): "+  parseInt("10.33") + "<br>";
+	var d ="d(\"10 45 66\"): "+  parseInt("34 45 66") + "<br>";
+	var e ="e(\" 60 \"): "+  parseInt(" 60 ") + "<br>";
+	var f ="f(\"40 years\"): "+  parseInt("40 years") + "<br>";
+	var g ="g(\"How was 40\"): "+  parseInt("He was 40") + "<br>";
+	var h = "h(\"010\"): "+ parseInt("010")+ "<br>";
+	var i = "i(\"0x10\"): "+ parseInt("0x10")+ "<br>";
+	var j = "j(\"100\",10): "+ parseInt("100",10)+ "<br>"; //將字串轉成十進位
+	var k = "k(\"100\",8): "+ parseInt("100",8)+ "<br>";//將字串轉成八進位
+	var l = "l(\"100\",16): "+ parseInt("100",16)+ "<br>";//將字串轉成16進位
+
+	var n = str + a + b + c + d + e + f + g + "<br>" + h + i + j + k +l;
+
+	document.write(n);
+
+	var str1="<h1>parseFloat() 函數</h1><br />";
+	var x="x(\"10.2\") : "+parseFloat("10.2") +"<br />"
+	var y="y(\"Chapter 10.2 \") : "+parseFloat("Chapter 10.2")+"<br />"
+
+	document.write(str1+x+y);
+
+	var str2="<h1>eval() 函數</h1><br />";
+	var x1 = 10;
+	var y1 = 20;
+	var a1 ="eval(\"x1*y1\") : "+ eval("x1*y1") + "<br>";
+	var b1 ="eval(\"2+2\") : "+  eval("2+2") + "<br>";
+	var c1 = "eval(\"x1+17\") : "+  eval("x1+17") + "<br>";
+
+	var res =str2+ "x1 =" +x1 +"<br />"+"y1="+ y1 +"<br/>"+ a1 + b1 + c1;
+	document.write(res);
+
+
+	var str3="<h1>typeof() 函數</h1><br>";
+	var strNo="100.56編號";
+	var strName="JoLin";
+	var intBalance=1000;
+	var floatNo=100.56;
+	var blnSex=true;
+	var objTest=new Object();
+    document.write(str3);
+	document.write("strNo=\"100.56編號\"\t:" +typeof(strNo) +"<br>");
+	document.write("strName=\"JoLin\"\t: "+typeof(strName)+"<br>");
+	document.write("intBalance=1000\t:" + typeof(intBalance)+"<br>");
+	document.write("floatNo=100.56\t:" + typeof(floatNo)+"<br>");
+	document.write("blnSex=true\t:" + typeof(blnSex)+"<br>");
+	document.write("objTest=new Object()\t:" + typeof(objTest)+"<br>");
+	
+	
+
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JavaScript-陣列</title>
+	<script >
+		var array1=[10,5,100,35,80,90];
+		document.write("原始陣列 :"+"["+ array1.join() +"] <br />");
+		document.write("陣列長度 (length) : "+ array1.length +"<br />");
+		document.write("尋找陣列中指定元素 (indexOf(5)): "+array1.indexOf(5)+"<br />");
+
+		document.write("從陣列的最後一個元素開始搜尋，並傳回其位址  lastIndexOf(100) :"+ array1.lastIndexOf(100)+"<br />");
+		document.write("將陣列中所有元素合併成一個字串(join()) :"+array1.join()+"<br />");
+		document.write("取出陣列中最後一個元素，並移除該元素 pop():" + "原始陣列 :"+"["+ array1.join() +"]"+" / "+ "移除元素 :" + array1.pop()+"移除後陣列 :"+"["+array1.join()+"] <br />");
+		document.write("加入一個元素到陣列末端並傳回長度 push():" + "原始陣列 :"+"["+ array1.join() +"]"+" / "+ "加入元素，目前陣列長度為 :" + array1.push(1000)+"目前陣列內容為 :"+"["+ array1.join() +"] <br />");
+		document.write("反轉陣列 reverse() ，目前陣列內容為:" + array1.reverse())
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

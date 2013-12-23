@@ -1,0 +1,137 @@
+/*工具列設定 */
+#toolsPanel   /*定義工具列*/
+{
+	width: 800px;
+	height: 80px;
+	margin: 0px;
+}
+#drawPanel
+{
+	/*float: left;*/
+	margin: 0px;
+}
+#drawstyle
+{
+	float: left;
+}
+
+/*繪圖工具 */
+.drawTools   /*定義工具列-顯示顏色*/
+{
+/*	width: 200px;
+	height: 900px;
+*/	border-width: 1px;
+	/*border-style: dotted;*/
+	/*border-color: blue;*/
+	margin: 2px;
+	/*padding: 2px;*/
+	float: left;
+}
+
+
+
+/*顯示顏色區塊設定*/
+#colorPanel  /*定義工具列-選擇顏色區塊*/
+{
+	width:300px;
+	height:70px;
+
+	/*float: left;*/
+	/*resize:both;*/
+	/*overflow:auto;*/
+}
+
+#selectColorBlock
+{
+	width:200px;
+	height:70px;
+	float: left;
+
+}
+.colorBlock   /*定義工具列-每一個顏色小區塊*/
+{
+	width:30px;
+	height: 20px;
+	margin:5px;
+	float:left;
+	
+}
+
+.colorBlock:hover
+{
+	width:30px;
+	height: 20px;
+	margin:1px;
+	/*border-style: dotted;
+	color: green;
+	*/
+
+}
+ /*定義工具列-顏色顯示區塊*/
+.showColorBlock 
+{
+	width:50px;
+	height: 30px;
+	border-style: dotted;
+	/*border-color: #000000;*/
+	background-color: #000000;
+	color: #000000;
+	float: left;
+    border-size:1px;
+    margin: 10px;
+}
+
+
+/*定義繪圖區域*/
+#drawPanel
+{
+	width: 800px;
+	height: 400px;
+	border-style: groove;
+	border-width: 1px;
+	/*float: left;*/
+
+}
+#drawArea
+{
+	/*width: 800px;
+	height: 300px;*/
+	/*border-style: dotted;
+	border-width: 1px;
+	float: left;*/
+
+}
+
+
+/*畫筆的定義區域*/
+
+#selectPenPanel
+{
+	width:150px;
+	height: 70px;
+
+}
+.penblock
+{
+	background-color:red;
+	border-radius:100%;
+	box-shadow:0 2px 3px #000;
+	margin:auto;
+
+}
+
+.penbox
+{
+	height:30px;
+	width: 30px;
+	float: left;
+	border-color: #808080;
+	border-width: 2px;
+	/*margin: 2px;*/
+	
+}
+.penbox:hover
+{
+	height:32px;
+	width: 32px;
+}

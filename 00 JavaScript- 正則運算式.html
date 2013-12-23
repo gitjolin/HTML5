@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JavaScript - 正則運算式</title>
+	<script type="text/javascript">
+		document.write(/^<a href=(\'|\")[a-zA-Z0-9\/:\.]*(\'|\")>.*<\a>$/.test("<a href='http://www.crazyit.org'>Jo Lin Creazy Test</a>"));
+		function trim(s)
+		{
+			return s.replace(/(^\s*)|(\s*$)/g,"");
+
+		}
+		document.writeln("<br />=================================<br />");
+		document.writeln(trim (   'Hello , JoLin!    '));
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

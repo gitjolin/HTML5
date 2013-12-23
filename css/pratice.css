@@ -1,0 +1,62 @@
+#article
+{
+width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
+#article .hd
+{
+font-weight: true;
+margin:10px auto;
+
+}
+#article .hd h1
+{
+ font-size:123.1%;
+   font-weight:bold;
+}
+#article .bd
+{
+background-color: #ffc;
+padding:20px;
+margin-bottom: 5px;
+font-size:14px;
+width: 600px;
+height: 100px;
+}
+#article .bd p
+{
+    font-size:93%;
+    letter-spacing:1px;
+    line-height:1.5;
+}
+
+#article .ft a
+{
+  color:#369;
+    text-decoration:none;
+}
+
+#float
+{
+	zoom:1;
+	border:solid 5px #ccc;
+}
+#float .bd2:after
+{
+	 content: "";
+    display: block;
+    clear: both;
+    /*margin:50px;*/
+    padding: 10px;
+}
+#float .title
+{
+	font-size: 197%;
+	font-weight: bold;
+	float: left;
+}
+#float img
+{
+	float: right;
+}

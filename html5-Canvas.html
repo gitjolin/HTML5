@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>HTML5-Canvas</title>
+	<style>	
+		canvas
+		{
+			background-color: green;
+
+		}
+
+	</style>
+
+	<script>
+		function draw(){
+
+			var canvasNode=document.getElementById("canvas001");
+			var canvasContext=canvasNode.getContext("2d");
+
+			canvasContext.beginPath();
+			canvasContext.moveTo(300,100);
+			canvasContext.lineTo(400,200);
+			canvasContext.lineTo(300,400);
+			canvasContext.lineTo(200,200);
+			canvasContext.closePath();
+			canvasContext.fill();
+		}
+		window.onload=draw();
+
+	</script>
+</head>
+<body>
+	<canvas id="canvas001"  width="800" height="600" ></canvas>
+</body>
+</html>

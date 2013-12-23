@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>標籤的選擇器</title>
+
+</head>
+<body>
+	<div id='msg'></div>
+<script>
+	var tagsHTML=document.getElementsByTagName('html');
+	var msg='找到的HTML元素' + tagsHTML.length.toString()+'<br>'+'tags(0).nodeName:\t'+tagsHTML[0].nodeName+'<p>';
+
+	var tagshead=document.getElementsByTagName('head');
+	 msg +='找到的Head元素' + tagshead.length.toString()+'<br>'+'tags(0).nodeName:'+tagshead[0].nodeName+'<p>';
+	
+	var tagsbody=document.getElementsByTagName('body');
+	msg +='找到的BODY元素' + tagsbody.length.toString()+'<br>'+'tags(0).nodeName:'+tagsbody[0].nodeName+'<p>';
+
+     document.getElementById('msg').innerHTML=msg;
+	</script>
+	
+</body>
+</html>

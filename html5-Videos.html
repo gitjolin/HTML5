@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>HTML5-Videos</title>
+	<script>
+	function play () {
+		var fileNode=document.getElementById("file001");
+		var videoNode=document.getElementById("video001");
+
+		if(typeof (window.webkitURL) != "undefined")
+		{
+			videoNode.src=window.webkitURL.createObjectURL(fileNode.files[0]);
+		}else{
+			videoNode.src=window.URL.createObjectURL(fileNode.files[0]);
+		}
+	}
+
+
+	</script>
+</head>
+<body>
+	<video id="video001" controls autoplay></video><p>
+	<input id="file001 "type="file" accept="video/*"/><p>
+	<button onclick="play();">Play</button>
+</body>
+</html>

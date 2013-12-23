@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JavaScript的函式練習1</title>
+
+		<script type="text/javascript" >
+			var getStudentPosition=function(data)
+			{
+				return data.peter.sex;
+			};
+			var students={
+				knock:{
+					location:"Taipei",
+					sex:"Male"
+				},
+				peter:{
+					location:"Kaoshiung",
+					sex:"Male"
+				},
+				JoLin:{
+					location:"Pingtung",
+					sex:"Women"
+				}
+			};
+			var location= getStudentPosition(students);
+			alert(location);
+		</script>
+
+
+</head>
+<body>
+	
+</body>
+</html>

@@ -1,0 +1,43 @@
+header> h1
+{
+	font-size: 300%;
+	text-align: center;
+	font-weight: bolder;
+	color:blue;
+	background-color: yellow;
+}
+
+.choose
+{
+	float: left;
+	border-style: dotted;
+	border-width: 1px;
+}
+.choose:hover
+{
+	background-color:red;
+}
+/*div
+{
+	float: none;
+}*/
+
+div#showresult
+{
+	/*float: left;*/
+	width:500px;
+	height: 220px;
+	background-color: #FFE4C4;
+	border-style: double;
+	border-color: green;
+}
+footer
+{
+	background-color: green;
+	float: none;
+}
+#myicon
+{
+	width:500px;
+	height:250px;
+}

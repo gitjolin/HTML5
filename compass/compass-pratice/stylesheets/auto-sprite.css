@@ -1,0 +1,32 @@
+/* line 66, player/*.png */
+.player-sprite {
+    background: url('/images/player-s7d525b217a.png') no-repeat;
+}
+
+/**/
+/* line 6, ../sass/auto-sprite.scss */
+#media {
+    background: pink;
+    width: 500px;
+}
+/* line 9, ../sass/auto-sprite.scss */
+#media li {
+    height: 40px;
+    line-height: 40px;
+}
+/* line 12, ../sass/auto-sprite.scss */
+#media li span {
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    height: 40px;
+    width: 40px;
+    display: -moz-inline-box;
+    -moz-box-orient: vertical;
+    display: inline-block;
+    vertical-align: middle;
+    *vertical-align: auto;
+}
+/* line 7, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/css3/_inline-block.scss */
+#media li span {
+    *display: inline;
+}

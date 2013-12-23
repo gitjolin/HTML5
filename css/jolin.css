@@ -1,0 +1,30 @@
+h1
+{
+display: block;
+color: red;
+
+}
+div
+{
+display: block;
+
+}
+#article .hd h1
+{
+font-size: 150%;
+font-weight: bold;
+}
+
+#article .description{
+background: #ffc;
+padding: 20px;
+margin-bottom: 5px;
+}
+ p
+ {
+display: block;
+margin-before:1em;
+margin-after:1em;
+margin-start:0px;
+margin-end:0px;
+}

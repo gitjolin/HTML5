@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Book:SKN00029 - CH1 事件的處裡順序</title>
+		<script>
+			var SampleString="Hello";
+
+			function show1()
+			{
+			alert("This is Function Show1");
+			}
+			function show2()
+			{
+				alert(window.SampleString);
+			}
+		</script>
+			<script>
+				window.onload=alert("This is windows onload String!");
+			</script>
+			<script>
+				alert("This is Default Script Alert!");
+			</script>
+	
+
+		<script src="JavaScript/testjs.js" type="text/javascript" charset="utf-8" async defer>
+		show();
+
+		</script>
+</head>
+<body>
+
+	<button onclick="show1();">Show Sample Data!</button>
+	<button onclick="show2()">Show Windows.sample Data!</button>
+	<button onclick="show3()">Show external!</button>
+
+	<Script>
+		alert("this is Embedded Script 002");
+	</Script>
+
+	<p> This is HTML Body</p>
+
+	<script>	
+
+		alert("this is Embedded Script 003");
+	</script>
+
+</body>
+</html>

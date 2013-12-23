@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>函式的練習</title>
+	<script>	
+		//一般函式
+		function compare(x,y)
+		{
+			if(x>y)
+			{
+				document.write(" 結果是: x > y <p>");
+			}else if(x==y){
+				document.write("結果是: x=y <p>");
+			}else
+				document.write("結果是: x < y <p>");
+			
+		}
+
+		var x=15 ,y=15;
+		compare(x,y);
+	//匿名函式
+		var  now=new Date();
+        var strQuater="";
+		var Quater = function(month){
+			if (month<=3)
+				strQuater="第一季 <p>"
+			else if(month >3 && month<=7 )
+				strQuater="第二季 <P>"
+			else if(month>7 && month<=11)
+				strQuater="第三季 <P>"	
+			else
+				strQuater="第四季 <P>"
+		}
+		
+		Quater(now.getMonth());
+		document.write("今天的日期是  :"+now.getYear()+"/"+now.getMonth()+"/"+now.getDate() + "現在是 "+strQuater);
+	</script>
+}
+</head>
+<body>
+	
+</body>
+</html>

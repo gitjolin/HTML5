@@ -1,0 +1,13 @@
+#PageTitle
+{
+	background-color: yellow;
+	text-align: center;
+
+}
+#PageTitle h1
+{
+	font-style: arial;s
+	font-size: 200%;
+	font-weight: bolder;
+	color:blue;
+}

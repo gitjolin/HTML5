@@ -1,0 +1,28 @@
+header
+{
+	font-weight: bolder;
+	font-style: Georgia;
+	color:blue;
+}
+summary 
+{
+	color: red;
+	font-size: 120%;
+	font-weight: bolder;
+}
+#tag_wbr_content
+{
+	width:200px;
+	border-width: 2px;
+	border-style: dotted;
+	border-color: blue;
+}
+header:hover
+{
+	cursor: pointer;
+	color: red;
+}
+#mark_detail
+{
+	display: none;	
+}
